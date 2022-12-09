@@ -91,8 +91,9 @@ fn main() {
         let as_str = &line.unwrap_or_else(|e| panic!("{}", e));
 
         if let Ok(pairs) = MathParser::parse(Rule::expr, as_str) {
+            // println!("{:?}", pairs);
             let parsed = parse_expr(pairs);
-            println!("{:?}", parsed);
+            // println!("{:?}", parsed);
             println!("{:?}", evaluate_expr(parsed));
         } else {
             println!("Invalid input");
